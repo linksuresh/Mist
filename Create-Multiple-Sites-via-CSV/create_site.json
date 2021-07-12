@@ -1,0 +1,7 @@
+{
+  "api": {
+    "org_id": "Your-Org-ID",
+    "token": "Your-token",
+    "mist_url": "https://api.mist.com/api/v1"
+  }
+}
