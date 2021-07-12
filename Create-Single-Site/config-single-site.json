@@ -1,0 +1,16 @@
+{
+  "api": {
+    "org_id": "Your-Org-ID",
+    "token": "Your-Token",
+    "mist_url": "https://api.mist.com/api/v1"
+  },
+
+  "site": {
+    "name": "Single_Site",
+    "timezone": "America/Los_Angeles",
+    "country_code": "US",
+    "address": "1133 Innovation Way, Sunnyvale, CA 94089, USA",
+    "lat": "37.408359",
+    "lng": "-122.029155"
+  }
+}
