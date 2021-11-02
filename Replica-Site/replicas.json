@@ -1,12 +1,12 @@
 {
   "mist_url": "https://api.mist.com/api/v1",
   "current_org_site": {
-    "org_id": "9777c1a0-6ef6-11e6-8bbf-02e208b2d34f",
-    "token": "TmuNdei98cxJVVgifl9oaRohrgKaba5uOCIQVcL9ik7DuBFchQkfXCJ7854OudYVWUXMER4KDnx6aKe0C8RvKE0fgVItTdFf",
-    "site_id": "978c48e6-6ef6-11e6-8bbf-02e208b2d34f"
+    "org_id": "current-org-id",
+    "token": "current-org-token",
+    "site_id": "current-site"
   },
   "new_org_site": {
-    "org_id": "e8cdf6a9-6d9c-4e80-bf8c-fa89b27baca3",
-    "token": "jfSzHCrT0M0sqPF8Ztvp3sRbQrrW7PShWpJn2vGDqWx8oEXj57U70FET83nyZBhxqb40NMdeb9zlpCVuOUeo8U1ybYE7z75L"
+    "org_id": "new-org-id",
+    "token": "new-org-token"
   }
 }
