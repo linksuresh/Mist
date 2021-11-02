@@ -10,6 +10,22 @@ import time
 import json
 import requests
 
+def read_current_site_info(configs):
+    api_url = '{0}/sites/{1}'.format(configs['mist_url'], configs['current_org_site']['site_id'])
+    print (api_url)
+    headers = {'Content-Type': 'application/json',
+               'Authorization': 'Token {}'.format(configs['current_org_site']['token'])}
+
+    response = requests.get(api_url, headers=headers)
+    if response.status_code != 200:
+        assert False, 'Fetching Site info failed ---> Error Code = {}, Error Text = {}'.format(response.status_code, response.text)
+
+    site_info = json.loads(response.content.decode('utf-8'))
+    # print(json.dumps(site_settings, indent=4, sort_keys=True))
+    with open('replicas_current_site_info.json', 'w') as fp:
+        json.dump(site_info, fp, indent=4)
+    return site_info
+
 
 def create_new_site(configs):
     """
@@ -20,13 +36,15 @@ def create_new_site(configs):
     Returns:
         - The ID of the newly created site
     """
-    mist_site = {}
-    mist_site['name'] = configs['new_org_site']['site']['name']
-    mist_site['timezone'] = configs['new_org_site']['site']['timezone']
-    mist_site['country_code'] = configs['new_org_site']['site']['country_code']
-    mist_site['address'] = configs['new_org_site']['site']['address']
-    mist_site['latlng'] = {'lat': configs['new_org_site']['site']['lat'], 'lng': configs['new_org_site']['site']['lng']}
 
+    current_site_info = read_current_site_info(configs)
+    mist_site = {}
+    mist_site['name'] = current_site_info['name']
+    mist_site['timezone'] = current_site_info['timezone']
+    mist_site['country_code'] = current_site_info['country_code']
+    mist_site['address'] = current_site_info['address']
+    mist_site['latlng'] = {'lat': current_site_info['lat'], 'lng': current_site_info['lng']}
+    
     data_post = json.dumps(mist_site)
     # print (data_post)
 
