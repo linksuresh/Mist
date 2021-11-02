@@ -1,0 +1,20 @@
+{
+  "mist_url": "https://api.mist.com/api/v1",
+  "current_org_site": {
+    "org_id": "current-org-id",
+    "token": "current-org-token",
+    "site_id": "current-site"
+  },
+  "new_org_site": {
+    "org_id": "new-org-id",
+    "token": "new-org-token",
+    "site": {
+      "name": "Replica_Site",
+      "timezone": "America/Los_Angeles",
+      "country_code": "US",
+      "address": "1133 Innovation Way, Sunnyvale, CA 94089, USA",
+      "lat": "37.408359",
+      "lng": "-122.029155"
+    }
+  }
+}
